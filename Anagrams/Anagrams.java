@@ -111,16 +111,17 @@ public class Anagrams {
 	public static void main(String[] args) {
 
 		String current = System.getProperty("user.dir");
-		Anagrams word = new Anagrams();
+		Anagrams a = new Anagrams();
 
 		final long startTime = System.nanoTime();
 
 		try {
-			word.processFile(current + "\\words_alpha.txt");
+			a.processFile(current + "\\words_alpha.txt");
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		ArrayList<Map.Entry<Long, ArrayList<String>>> maxEntries = word.getMaxEntries();
+		ArrayList<Map.Entry<Long, ArrayList<String>>> maxEntries = a.getMaxEntries();
+		// 自己加的，需要搞清楚是什么！！！
 		long key = maxEntries.get(0).getKey();
 		int length = maxEntries.get(0).getValue().size();
 		final long estimatedTime = System.nanoTime() - startTime;
